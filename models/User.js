@@ -30,12 +30,10 @@ const UserSchema = new Schema ({
     },
     calories_count: {
         type: Number,
-        required: true,
         default: "0"
     },
     accept_challenge: {
         type: Boolean,
-        required: true,
         default: "no"
     }
 })
