@@ -5,6 +5,8 @@ const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
 const challenges = require("./routes/api/challenges");
 const bodyParser = require('body-parser');
+const passport = require('passport');
+
 
 
 mongoose
@@ -15,7 +17,10 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => res.send("Hello World!"));
+
+app.use(passport.initialize());
+require("./config/passport")(passport);
+// app.get("/", (req, res) => res.send("Hello World!"));
 
 app.use("/api/users", users);
 app.use("/api/challenges", challenges);
