@@ -16,3 +16,5 @@ const SessionErrorsReducer = (state = _nullErrors, action) => {
       return state;
   }
 }
+
+export default SessionErrorsReducer;

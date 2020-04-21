@@ -74,9 +74,9 @@ class SignupForm extends React.Component {
             <br />
             <input
               type="text"
-              value={this.state.handle}
-              onChange={this.update("handle")}
-              placeholder="Handle"
+              value={this.state.username}
+              onChange={this.update("username")}
+              placeholder="Username"
             />
             <br />
             <input
@@ -97,14 +97,14 @@ class SignupForm extends React.Component {
               type="text"
               value={this.state.height}
               onChange={this.update("height")}
-              placeholder="height"
+              placeholder="Height"
             />
             <br />
             <input
               type="text"
               value={this.state.weight}
               onChange={this.update("weight")}
-              placeholder="weight"
+              placeholder="Weight"
             />
             <br />
             <input type="submit" value="Sign Up" />
