@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const db = require("./config/keys").mongoURI;
+// const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
 const challenges = require("./routes/api/challenges");
 const bodyParser = require('body-parser');
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 mongoose
-    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect('mongodb+srv://lbisch:PlINSj1Ahwadz06O@cluster0-xpszz.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
