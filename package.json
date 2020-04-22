@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "server:debug": "nodemon --inspect app.js",
     "start": "node app.js",
     "server": "nodemon app.js",
     "frontend-install": "npm install --prefix frontend",
@@ -19,7 +20,7 @@
     "concurrently": "^5.1.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.9",
+    "mongoose": "^5.9.10",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "validator": "^13.0.0"
