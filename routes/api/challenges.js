@@ -25,47 +25,60 @@ router.post("/",
   newChallenge.save().then(challenge => res.json(challenge));
 });
 
-router.get('/user/author/:author_id', (req, res) => {
-  Challenge.find({author_id: req.params.author_id})
+// router.get('/user/author/:author_id', (req, res) => {
+//   Challenge.find({author_id: req.params.author_id})
+//   .then(challenges => {
+//     if (challenges.length === 0){
+//       return res.json("You haven't Challenged anyone yet");
+//     }
+//     return res.json(challenges);
+//   })
+    
+    
+//   .catch(err => res.status(404).json(err));
+  
+// });
+
+
+router.get('/user/author', passport.authenticate("jwt", {session:false}), (req, res) => {
+  Challenge.find({author_id: req.user.id})
   .then(challenges => {
     if (challenges.length === 0){
       return res.json("You haven't Challenged anyone yet");
     }
     return res.json(challenges);
   })
-    
-    
   .catch(err => res.status(404).json(err));
   
 });
 
-router.get('/user/challengee/:challengee_id', (req, res) => {
-  Challenge.find({challengee_id: req.params.challengee_id})
+router.get('/user/challengee', passport.authenticate("jwt", {session:false}), (req, res) => {
+  Challenge.find({challengee_id: req.user.id})
   .then(challenges => res.json(challenges))
   .catch(err => res.status(404).json(err));
-  
 });
 
-// router.get('/user/challenges/', passport.authenticate("jwt", { session: false }), (req, res) =>{
-//   Challenge.find( { $or: [ {challengee_id: req.user.id}, {author_id: req.user.id } ] } )
-//   .then(challenges => {
-//     if (challenges.length === 0){
-//       return res.json("You have no challenges");
-//     }
-//     return res.json(challenges);
-//   });
-
-// });
-
-router.get('/user/acceptc', (req, res) => {
-  Challenge.find({challengee_id: req.user.id})
-    .then(challenge =>{
-    challenge.update(
-    {challengee_start_cals: Date.now},
-    {start: Date.now})
-    return res.json("The challenge has begun!")})
-    .catch(err => res.status(404).json(err));
+router.get('/user/challenges', passport.authenticate("jwt", { session: false }), (req, res) =>{
+  Challenge.find( { $or:[ {challengee_id: req.user.id}, {author_id: req.user.id } ] } )
+  .then(challenges => {
+    if (challenges.length === 0){
+      return res.json("You have no challenges");
+    }
+    return res.json(challenges);
   });
+});
+
+// router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
+//   debugger
+//   Challenge.find({id: req.params.chall_id})
+//     .then(challenge =>{
+//       debugger
+//     challenge.update(
+//     {challengee_start_cals: Date.now},
+//     {start: Date.now});
+//     return res.json("The challenge has begun!");})
+//     .catch(err => res.status(404).json(err));
+//   });
 
 // router.get("/:id")
 
