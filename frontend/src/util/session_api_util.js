@@ -6,12 +6,12 @@ export const setAuthToken = token => {
   } else {
     delete axios.defaults.headers.common['Authorization'];
   }
-}
+};
 
 export const signup = (userData) => {
-  return axios.post('/api/users/register', userData);
-}
+  return axios.post("/api/users/register", userData);
+};
 
 export const login = (userData) => {
-  return axios.post('/api/users/login', userData);
-}
+  return axios.post("/api/users/login", userData);
+};
