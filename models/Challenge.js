@@ -11,18 +11,23 @@ const ChallengeSchema = new Schema({
     required: true
   },
   author_id : {
-    type: Number,
-    required: true
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   },
   challengee_id : {
-    type: Number,
-    required: true
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   },
   author_start_cals: {
-    type: Number
+    type: Number,
+    ref: 'users',
+    required: true
   },
   challengee_start_cals: {
-    type: Number
+    type: Number,
+    ref: 'users',
+    default: "0",
+    required: true
   },
   creation: {
     type: Date,

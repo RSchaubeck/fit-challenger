@@ -50,16 +50,16 @@ module.exports = function validateRegisterInput(data) {
         errors.height = "Confirm height field is required";
     }
 
-    if (Validator.isNumeric(data.height), { no_symbols: true }) {
-        errors.height = "Please only enter numbers"
+    if (!Validator.isNumeric(data.height, { no_symbols: false })) {
+        errors.height = "Please only enter numbers";
     }
 
     if (Validator.isEmpty(data.weight)) {
         errors.weight = "Confirm weight field is required";
     }
 
-    if (Validator.isNumeric(data.weight), { no_symbols: true }) {
-        errors.weight = "Please only enter numbers"
+    if (!Validator.isNumeric(data.weight, { no_symbols: false })) {
+        errors.weight = "Please only enter numbers";
     }
 
     return {
