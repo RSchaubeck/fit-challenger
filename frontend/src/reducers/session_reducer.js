@@ -23,7 +23,6 @@ export default function(state = initialState, action) {
         user: action.currentUser
       };
     case RECEIVE_USER_SIGN_IN:
-      debugger
       return {
         ...state,
         isSignedIn: true

@@ -69,10 +69,8 @@ router.get('/user/challenges', passport.authenticate("jwt", { session: false }),
 });
 
 // router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
-//   debugger
 //   Challenge.find({id: req.params.chall_id})
 //     .then(challenge =>{
-//       debugger
 //     challenge.update(
 //     {challengee_start_cals: Date.now},
 //     {start: Date.now});
