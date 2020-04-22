@@ -40,7 +40,7 @@ const UserSchema = new Schema ({
         name: String,
         groupchalls: [{
             type: Schema.Types.ObjectId,
-            ref: 'GroupChall'}]
+            ref: 'Groupchall'}]
         
     }
 })
