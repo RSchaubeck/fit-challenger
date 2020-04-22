@@ -33,9 +33,8 @@ const ChallengeSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  start: {
-    type: Date,
-    default: Date.now
+  startd: {
+    type: Date
   }
 });
 

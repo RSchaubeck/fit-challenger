@@ -10,7 +10,6 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\""
-
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +25,8 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "webpack-dev-server": "^3.10.3"
   },
   "proxy": "http://localhost:5000"
 }

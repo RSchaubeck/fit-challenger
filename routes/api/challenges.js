@@ -68,19 +68,17 @@ router.get('/user/challenges', passport.authenticate("jwt", { session: false }),
   });
 });
 
-// router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
-//   debugger
-//   Challenge.find({id: req.params.chall_id})
-//     .then(challenge =>{
-//       debugger
-//     challenge.update(
-//     {challengee_start_cals: Date.now},
-//     {start: Date.now});
-//     return res.json("The challenge has begun!");})
-//     .catch(err => res.status(404).json(err));
-//   });
+router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
+  const NewD = new Date();
+  Challenge.findByIdAndUpdate({_id: req.params.chall_id},{
+    challengee_start_cals: req.user.calories_count,
+    startd: NewD},
+    {new:true})
+    .then(challenge =>{ return res.json(challenge)})
+    .catch(err => res.status(404).json(err));
+  });
 
-// router.get("/:id")
+
 
 
 module.exports = router;
