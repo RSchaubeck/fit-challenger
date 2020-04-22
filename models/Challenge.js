@@ -14,10 +14,10 @@ const ChallengeSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  challengee_id : {
+  challengee_id : [{
     type: Schema.Types.ObjectId,
     ref: 'users'
-  },
+  }],
   author_start_cals: {
     type: Number,
     ref: 'users',
