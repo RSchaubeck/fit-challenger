@@ -43,13 +43,11 @@ class SignupForm extends React.Component {
       height: this.state.height,
       weight: this.state.weight
     };
-    debugger
 
     this.props.signup(user, this.props.history);
   }
 
   renderErrors() {
-    // debugger
     return (
       <ul className="errors">
         {Object.keys(this.state.errors).map((error, i) => (
