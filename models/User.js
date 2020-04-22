@@ -35,6 +35,13 @@ const UserSchema = new Schema ({
     accept_challenge: {
         type: Boolean,
         default: "no"
+    },
+    group_challenges: {
+        name: String,
+        groupchalls: [{
+            type: Schema.Types.ObjectId,
+            ref: 'GroupChall'}]
+        
     }
 })
 

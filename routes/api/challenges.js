@@ -18,27 +18,11 @@ router.post("/",
     author_id: req.user.id,
     category: req.body.category,
     goal: req.body.goal,
-    //im not sure if we need to do searching for the person by their username here or in front end calcs
     challengee_id: req.body.challengee_id,
-    author_start_cals: req.user.calories_count,
+    author_start_cals: req.user.calories_count
   });
   newChallenge.save().then(challenge => res.json(challenge));
 });
-
-// router.get('/user/author/:author_id', (req, res) => {
-//   Challenge.find({author_id: req.params.author_id})
-//   .then(challenges => {
-//     if (challenges.length === 0){
-//       return res.json("You haven't Challenged anyone yet");
-//     }
-//     return res.json(challenges);
-//   })
-    
-    
-//   .catch(err => res.status(404).json(err));
-  
-// });
-
 
 router.get('/user/author', passport.authenticate("jwt", {session:false}), (req, res) => {
   Challenge.find({author_id: req.user.id})
@@ -68,6 +52,21 @@ router.get('/user/challenges', passport.authenticate("jwt", { session: false }),
   });
 });
 
+router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
+  const NewD = new Date();
+  Challenge.findByIdAndUpdate({_id: req.params.chall_id},{
+    challengee_start_cals: req.user.calories_count,
+    startd: NewD},
+    {new:true})
+    .then(challenge =>{ return res.json(challenge)})
+    .catch(err => res.status(404).json(err));
+  });
+
+  router.get('/all_challenges', passport.authenticate("jwt", { session: false }), (req, res) =>{
+    Challenge.find()
+      .sort({ creation: -1})
+      .then(challenges => res.json(challenges))
+      .catch(err => res.status(404).json({err}));
 // router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
 //   Challenge.find({id: req.params.chall_id})
 //     .then(challenge =>{
@@ -77,8 +76,7 @@ router.get('/user/challenges', passport.authenticate("jwt", { session: false }),
 //     return res.json("The challenge has begun!");})
 //     .catch(err => res.status(404).json(err));
 //   });
-
-// router.get("/:id")
+  });
 
 
 module.exports = router;
