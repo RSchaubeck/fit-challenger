@@ -68,8 +68,8 @@ class SignupForm extends React.Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
-          <h1>Create Your Fit-Challenger Account</h1>
-          <h2>create your free account to get started</h2>
+            <h1>Create Your Fit-Challenger Account</h1>
+            <h2>create your free account to get started</h2>
             <br />
             <input
               type="text"
