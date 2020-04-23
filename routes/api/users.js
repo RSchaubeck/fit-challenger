@@ -41,7 +41,7 @@ router.post("/register", (req, res) => {
                     password: req.body.password,
                     height: req.body.height,
                     weight: req.body.weight
-                })
+                });
 
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {

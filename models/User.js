@@ -36,13 +36,9 @@ const UserSchema = new Schema ({
         type: Boolean,
         default: "no"
     },
-    group_challenges: {
-        name: String,
-        groupchalls: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Groupchall'}]
-        
-    }
-})
+    group_challenges: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Groupchall'}]   
+});
 
 module.exports = User = mongoose.model("User", UserSchema);

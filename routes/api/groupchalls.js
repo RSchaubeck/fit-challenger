@@ -27,19 +27,25 @@ router.post("/create",
   newGroupChall.save().then(groupchall => res.json(groupchall));
 });
 
+  
 router.patch('/join/:groupchall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
-  User.findByIdAndUpdate({_id: req.user.id},
-    { $push: {group_challenges: req.params.groupchall_id}}, 
-    {new:true}).then(user =>{
-      if (user){
-        Groupchall.findByIdAndUpdate({_id: req.params.groupchall_id}, { $inc: {number_joined:1}},
-        {new:true})
-        .then(groupchall =>{ return res.json(groupchall)})
-        .catch(err => res.status(404).json(err));
-      }
-
-    }).catch(err => res.status(404).json(err));
-
+  User.findOne({_id: req.user.id})
+  .then(user =>{
+      const before = user.group_challenges.length;
+      User.findByIdAndUpdate({_id: req.user.id}, { $addToSet: {group_challenges: req.params.groupchall_id}}, {new:true})
+          .then((user) =>{
+                  const newl = user.group_challenges.length;
+                  if (before != newl){
+                    Groupchall.findByIdAndUpdate({_id: req.params.groupchall_id}, { $inc: {number_joined:1}}, {new:true})
+                    .then(groupchall =>{ return res.json(groupchall);});
+                  }else{
+                    return res.status(400).json({msg: "You've already signed up for this challenge"});
+                  }
+          });
+        
+       })
+  .catch(err => res.status(404).json(err));
 });
+
 
 module.exports = router;
