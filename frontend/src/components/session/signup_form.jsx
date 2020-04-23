@@ -64,7 +64,7 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <div className="picture">
-          <h1>a picture goes here</h1>
+          <img src="https://fit-challenger.s3.amazonaws.com/running-sports-science.jpg" alt=""/>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">

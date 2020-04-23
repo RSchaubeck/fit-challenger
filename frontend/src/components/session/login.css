@@ -41,6 +41,11 @@
 
 .login-form-container {
   background-color: #232529;
+  background-image: url(https://fit-challenger.s3.amazonaws.com/kettlebell-exercise-man_h.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 900px;
 }
 
 .notclickable {
