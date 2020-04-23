@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "jwt-decode": "^2.2.0",
     "node-modules": "^1.0.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -24,6 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },

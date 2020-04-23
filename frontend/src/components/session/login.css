@@ -1,0 +1,82 @@
+.login-form-container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;    
+}
+
+.login-form {
+  margin: 0 auto;
+  width: 360px;
+  height: 300px;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+  width: 300px;
+  line-height: 20px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: #393B3F;
+  margin: 0 auto;
+  color: white;
+  font-size: 15px;
+}
+
+.login-form input[type="password"] {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.login-form input[type="submit"] {
+  width: 250px;
+  border-radius: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: transparent;
+  padding: 0;
+}
+
+.login-form-container {
+  background-color: #232529;
+  background-image: url(https://fit-challenger.s3.amazonaws.com/kettlebell-exercise-man_h.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 900px;
+}
+
+.notclickable {
+  background-color: #393B3F;
+  transition-duration: 0.3s;
+  color: #A5A9AF;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.clickable {
+  transition-duration: 0.3s;
+  background-color: #0167D6;
+  color: white;
+  cursor: pointer;
+}
+
+.login-prompt {
+  color: white;
+  font-weight: 10;
+}
+
+.login-form input::placeholder {
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.login-form input{
+  padding: 15px;
+}
+

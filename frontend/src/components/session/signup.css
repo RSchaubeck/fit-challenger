@@ -1,0 +1,46 @@
+.signup-form-container {
+  text-align: center;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;    
+}
+
+.picture {
+  width: 50%;
+}
+
+.signup-form-container > form {
+  width: 50%;
+}
+
+.signup-form {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form input {
+  width: 100%;
+  line-height: 39px;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-form input:focus {
+  border: 1px solid black;
+}
+
+.signup-form > h2 {
+  text-transform: uppercase;
+  font-size: 15px;
+  align-self: flex-start;
+}
+.signup-form > h1 {
+  align-self: flex-start;
+  text-align: left;
+}
+
+.signup-form input[type="submit"] {
+  line-height: 40px;
+}
+
