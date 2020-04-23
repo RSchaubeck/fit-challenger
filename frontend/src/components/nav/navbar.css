@@ -7,6 +7,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.navbar-logo {
+  height: 50px;
+  width: 100px;
+  object-fit: cover;
+}
+
 .nav-link {
   color: white;
   text-decoration: none;
