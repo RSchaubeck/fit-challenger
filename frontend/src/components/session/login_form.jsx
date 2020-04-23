@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import './login.css';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class LoginForm extends React.Component {
       email: "",
       password: "",
       errors: {},
+      status: "notclickable"
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,10 +29,20 @@ class LoginForm extends React.Component {
 
   // Handle field updates (called in the render method)
   update(field) {
-    return (e) =>
+    return (e) => {
+      if (e.currentTarget.value !== "") {
+        this.setState({
+          status: "clickable"
+        })
+      } else {
+        this.setState({
+          status: "notclickable",
+        });
+      }
       this.setState({
         [field]: e.currentTarget.value,
       });
+    }
   }
 
   // Handle form submission
@@ -62,6 +74,7 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
+          <h1 className="login-prompt">Log In</h1>
           <div className="login-form">
             <input
               type="text"
@@ -77,7 +90,7 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             <br />
-            <input type="submit" value="Log in" />
+            <input type="submit" value="Log in" className={this.state.status}/>
             {this.renderErrors()}
           </div>
         </form>

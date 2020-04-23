@@ -5,6 +5,8 @@
   background-color: black;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  position: sticky;
+  top: 0;
 }
 
 .navbar-logo {
