@@ -1,11 +1,44 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import "./main_page.css";
 
 class MainPage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Fit Challenger</h1>
-        <footer>Copyright &copy; 2020 fitChallenger</footer>
+      <div id="page-container"> 
+
+        <div id="main-page-content-wrap">
+          <div>
+            <video id="bgvid" loop="true" autoplay="autoplay" controls="controls" playsinline muted>
+              <source src="https://fit-challenger.s3.amazonaws.com/180419_Boxing_05_08.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div id="mainpage-text">
+            <div className="main-page-title">
+              <img src="https://fit-challenger.s3.amazonaws.com/logo-box/logo_transparent.png" alt="logo"/>
+            </div>
+            <div className="main-page-slogan">
+              Accept the Challenge to be Fit
+            </div>
+            <div>
+              <div className="main-page-links">
+                <span>
+                  <Link to={"/signup"} className="nav-link">SIGNUP</Link>
+                </span>
+                <span>
+                  <Link to={"/login"} className="nav-link">LOGIN</Link>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <footer id="footer">
+          Copyright &copy; 2020 fitChallenger
+        </footer>
+
       </div>
     );
   }

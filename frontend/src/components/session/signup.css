@@ -1,7 +1,7 @@
 .signup-form-container {
   text-align: center;
   display: flex;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;    
 }
 
 .picture {
