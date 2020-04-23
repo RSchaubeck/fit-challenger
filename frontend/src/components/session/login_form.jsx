@@ -96,7 +96,11 @@ class LoginForm extends React.Component {
             />
             <br />
             <input type="submit" value="Log in" className={this.state.status}/>
-            {/* <Link to={"/signup"} className="nav-link">SIGNUP</Link> */}
+            <br/>
+            <div className="signup-option">
+              Don't have an account?
+              <Link to={"/signup"} className="signup-link">Sign Up</Link>
+            </div>
 
             {this.renderErrors()}
           </div>

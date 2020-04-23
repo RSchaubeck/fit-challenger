@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import './signup.css';
+import { Link } from 'react-router-dom'
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -66,57 +67,60 @@ class SignupForm extends React.Component {
         <div className="picture">
           <img src="https://fit-challenger.s3.amazonaws.com/running-signup-page-photo.jpg" alt="running"/>
         </div>
-        <form onSubmit={this.handleSubmit}>
+        <div className="signup-form-outer-layer"> 
           <div className="signup-form">
             <h1>Create Your Fit-Challenger Account</h1>
             <h2>create your free account to get started</h2>
-            <br />
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}
-              placeholder="Username"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.height}
-              onChange={this.update("height")}
-              placeholder="Height"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.weight}
-              onChange={this.update("weight")}
-              placeholder="Weight"
-            />
-            <br />
-            <input type="submit" value="Sign Up" />
-            {this.renderErrors()}
+
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username"
+              />
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password"
+              />
+              <input
+                type="password"
+                value={this.state.password2}
+                onChange={this.update("password2")}
+                placeholder="Confirm Password"
+              />
+              <input
+                type="text"
+                value={this.state.height}
+                onChange={this.update("height")}
+                placeholder="Height"
+              />
+              <input
+                type="text"
+                value={this.state.weight}
+                onChange={this.update("weight")}
+                placeholder="Weight"
+              />
+              <div className="signup-or-login">
+                <button className="signup-button">Sign Up</button>
+                <div className="login-option">
+                  Already have an account?
+                  <br/>
+                  <Link to="/login" className="login-option-link">Log In</Link>
+                </div>
+              </div>
+              {this.renderErrors()}
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     );
   }
