@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const GroupChallSchema = new Schema({
+const GroupchallSchema = new Schema({
   category: {
     type: String,
     required: true
@@ -17,7 +17,11 @@ const GroupChallSchema = new Schema({
   number_joined: {
     type: Number,
     default: "0" 
+  },
+  creator_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   }
 });
 
-module.exports = GroupChall = mongoose.model("GroupChall", GroupChallSchema);
+module.exports = Groupchall = mongoose.model("Groupchall", GroupchallSchema);
