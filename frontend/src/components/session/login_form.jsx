@@ -1,5 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import './login.css';
 
 class LoginForm extends React.Component {
@@ -60,21 +62,24 @@ class LoginForm extends React.Component {
   // Render the session errors if there are any
   renderErrors() {
     return (
-      <ul className="errors">
+      <div className="errors">
         {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`} className="error">
-            {this.state.errors[error]}
-          </li>
+          <p key={`error-${i}`} className="error">
+            • {this.state.errors[error]}
+          </p>
         ))}
-      </ul>
+      </div>
     );
   }
 
   render() {
     return (
       <div className="login-form-container">
+        <div className="login-form-logo">
+          <img src="https://fit-challenger.s3.amazonaws.com/logo-box/logo_transparent.png" alt="logo"/>
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <h1 className="login-prompt">Log In</h1>
+          <h1 className="login-prompt">LOG IN</h1>
           <div className="login-form">
             <input
               type="text"
@@ -91,6 +96,8 @@ class LoginForm extends React.Component {
             />
             <br />
             <input type="submit" value="Log in" className={this.state.status}/>
+            {/* <Link to={"/signup"} className="nav-link">SIGNUP</Link> */}
+
             {this.renderErrors()}
           </div>
         </form>

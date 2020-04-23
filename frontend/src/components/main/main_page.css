@@ -12,7 +12,7 @@
     font-size: 44px;
     font-weight: 900;
     color: #232529;
-    text-shadow: 2px 2px 4px #999;
+    text-shadow: 2px 2px 4px rgba(173, 170, 170, 0.541);
 }
 
 .main-page-title {

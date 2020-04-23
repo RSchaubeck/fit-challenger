@@ -19,25 +19,39 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="navbar-links">
-          <Link to={"/challenges"} className="nav-link">
-            All Challenges
-          </Link>
-          <Link to={"/profile"} className="nav-link">
-            Profile
-          </Link>
-          <Link to={"/new_challenge"} className="nav-link">
-            Create a Challenge
-          </Link>
-          <button onClick={this.logoutUser} className="logout-button">
-            Logout
-          </button>
+          <span>
+            <Link to={"/challenges"} className="nav-link">
+              All Challenges
+            </Link>
+          </span>
+          <span>
+            <Link to={"/profile"} className="nav-link">
+              Profile
+            </Link>
+          </span>
+          <span>
+            <Link to={"/new_challenge"} className="nav-link">
+              Create a Challenge
+            </Link>
+          </span>
+          <span>
+            <button onClick={this.logoutUser} className="logout-button">
+              Logout
+            </button>
+          </span>
         </div>
       );
     } else {
       return (
         <div className="navbar-links">
-          <Link to={"/signup"} className="nav-link">SIGNUP</Link>
-          <Link to={"/login"} className="nav-link">LOGIN</Link>
+          <span>
+
+            {/* <Link to={"/signup"} className="nav-link">SIGNUP</Link> */}
+          </span>
+          <span>
+
+            {/* <Link to={"/login"} className="nav-link">LOGIN</Link> */}
+          </span>
         </div>
       );
     }
