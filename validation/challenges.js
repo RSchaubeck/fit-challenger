@@ -5,6 +5,7 @@ module.exports = function validateChallengeInput(data) {
   let errors = {};
   data.category = validText(data.category) ? data.category : "";
   data.goal = validText(data.goal) ? data.goal : "";
+  data.goal2 = validText(data.goal2) ? data.goal2 : "";
   // data.author_id = validText(data.author_id) ? data.author_id : "";
   data.challengee_id = validText(data.challengee_id) ? data.challengee_id : "";
   // data.author_start_cals = validText(data.author_start_cals) ? data.author_start_cals : "";
@@ -17,6 +18,18 @@ module.exports = function validateChallengeInput(data) {
   }
   if (Validator.isEmpty(data.goal)){
     errors.goal = "Goal is required";
+  }
+  if (!Validator.isNumeric(data.goal)){
+    errors.goal = "Goal must be number";
+  }
+  if (Validator.isEmpty(data.goal2)){
+    errors.goal = "Goal verification is required";
+  }
+  if (!Validator.isNumeric(data.goal2)){
+    errors.goal = "Goal must be number";
+  }
+  if (!Validator.equals(data.goal, data.goal2)) {
+    errors.password2 = "Goals must match";
   }
   // if (Validator.isEmpty(data.author_id)){
   //   errors.author_id = "No author given";
