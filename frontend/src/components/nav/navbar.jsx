@@ -36,8 +36,8 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="navbar-links">
-          <Link to={"/signup"} className="nav-link">Signup</Link>
-          <Link to={"/login"} className="nav-link">Login</Link>
+          <Link to={"/signup"} className="nav-link">SIGNUP</Link>
+          <Link to={"/login"} className="nav-link">LOGIN</Link>
         </div>
       );
     }
@@ -46,9 +46,8 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar">
-        {/* <h1>Fit-Challenger</h1> */}
         <div className="navbar-logo">
-          <img className="navbar-logo" src="https://fit-challenger.s3.amazonaws.com/logo-box/logo_transparent.png" alt="logo"/>
+          <Link to={"/"}><img className="navbar-logo" src="https://fit-challenger.s3.amazonaws.com/logo-box/logo_transparent.png" alt="logo"/></Link>
         </div>
         {this.getLinks()}
       </div>

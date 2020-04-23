@@ -62,11 +62,11 @@ router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:fal
     .catch(err => res.status(404).json(err));
   });
 
-  router.get('/all_challenges', passport.authenticate("jwt", { session: false }), (req, res) =>{
-    Challenge.find()
-      .sort({ creation: -1})
-      .then(challenges => res.json(challenges))
-      .catch(err => res.status(404).json({err}));
+router.get('/all_challenges', passport.authenticate("jwt", { session: false }), (req, res) =>{
+  Challenge.find()
+    .sort({ creation: -1})
+    .then(challenges => res.json(challenges))
+    .catch(err => res.status(404).json({err}));
 // router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:false}), (req, res) => {
 //   Challenge.find({id: req.params.chall_id})
 //     .then(challenge =>{
@@ -76,7 +76,7 @@ router.patch('/user/accept/:chall_id', passport.authenticate("jwt", {session:fal
 //     return res.json("The challenge has begun!");})
 //     .catch(err => res.status(404).json(err));
 //   });
-  });
+});
 
 
 module.exports = router;
