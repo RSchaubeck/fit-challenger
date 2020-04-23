@@ -8,6 +8,10 @@
   width: 50%;
 }
 
+.picture > img {
+  margin-top: 50px;
+}
+
 .signup-form-container > form {
   width: 50%;
 }

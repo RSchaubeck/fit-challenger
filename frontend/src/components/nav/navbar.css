@@ -18,9 +18,30 @@
 .nav-link {
   color: white;
   text-decoration: none;
+
 }
 
 .navbar-links {
-  font-family: 'Open Sans', sans-serif;    
+  font-family: 'Open Sans', sans-serif;   
+  font-size: 13px; 
 
+}
+
+.navbar-links > span {
+  margin-right: 10px;
+}
+
+.navbar-links > span:last-child { 
+  margin-right: 20px;
+}
+
+.navbar-links > span:hover {
+  border-bottom: 2px solid white;
+}
+
+.errors {
+  margin-top: 20px;  
+  font-family: 'Open Sans', sans-serif;   
+  color: white;
+  font-weight: 700;
 }

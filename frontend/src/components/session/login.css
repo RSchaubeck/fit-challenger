@@ -41,7 +41,7 @@
 
 .login-form-container {
   background-color: #232529;
-  background-image: url(https://fit-challenger.s3.amazonaws.com/kettlebell-exercise-man_h.jpg);
+  background-image: url(https://fit-challenger.s3.amazonaws.com/running-sports-science.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -65,7 +65,9 @@
 
 .login-prompt {
   color: white;
-  font-weight: 10;
+  font-weight: 700;
+  font-size: 30px;
+  padding-bottom: 30px;
 }
 
 .login-form input::placeholder {
@@ -80,3 +82,16 @@ input:focus {
   padding: 15px;
 }
 
+
+.login-form-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px;
+}
+
+
+.login-form-logo > img {
+  width: 280px;
+  margin-top: -100px;
+}
