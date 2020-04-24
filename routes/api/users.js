@@ -19,7 +19,14 @@ router.get("/current", passport.authenticate("jwt", { session: false }), (req, r
         email: req.user.email,
         group_challenges: req.user.group_challenges
     }); 
-})
+});
+
+router.get("/all", (req, res)=>{
+    User.find()
+    .sort({username: -1})
+    .then(users => res.json(users))
+    .catch(err => res.status(404).json({err}));
+});
 
 
 router.post("/register", (req, res) => {
