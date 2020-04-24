@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/session_api_util';
+import * as APIUtil from '../util/challenge_api_util';
 
 export const RECIEVECHALLENGES = "RECIEVECHALLENGES";
 export const RECIEVECHALLENGE = "RECIEVECHALLENGE";
@@ -47,6 +47,6 @@ export const acceptChallenge = (challengeData) => dispatch =>{
 
 export const requestAll = () => dispatch =>{
   return (
-    APIUtil.allchallenges().then(challenges =>{ dispatch(receiveChallenges(challenges))})
+    APIUtil.allChallenges().then(challenges =>{ dispatch(receiveChallenges(challenges))})
   );
 };

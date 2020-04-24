@@ -6,13 +6,13 @@ const msp = state => {
   return {
     errors: state.errors.session
   };
-}
+};
 
 const mdp = dispatch => {
   return {
     login: user => dispatch(login(user))
   };
-}
+};
 
 export default connect(
   msp,
