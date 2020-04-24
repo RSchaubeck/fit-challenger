@@ -95,3 +95,19 @@ input:focus {
   width: 280px;
   margin-top: -100px;
 }
+
+.signup-option {
+  margin-top: 20px;
+  color: white;
+  font-size: 15px;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #0167D6;
+  margin-left: 10px;
+}
+
+.signup-link:hover {
+  color:  #007ED6;
+}

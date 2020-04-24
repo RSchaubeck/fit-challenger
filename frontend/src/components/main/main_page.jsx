@@ -10,7 +10,7 @@ class MainPage extends React.Component {
 
         <div id="main-page-content-wrap">
           <div>
-            <video id="bgvid" loop="true" autoPlay="autoplay" controls="controls" playsInline muted>
+            <video id="bgvid" loop={true} autoPlay="autoplay" controls="controls" playsInline muted>
               <source src="https://fit-challenger.s3.amazonaws.com/180419_Boxing_05_08.mp4" type="video/mp4" />
             </video>
           </div>
