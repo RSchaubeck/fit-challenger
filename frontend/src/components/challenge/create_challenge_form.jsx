@@ -13,8 +13,11 @@ class CreateChallengeForm extends React.Component{
       challengee_id:0,
       errors: {}
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
-  componentDidMount() {
+  componentWillMount() {
     //debugger
     this.props.requestUsers();
     //debugger
@@ -53,6 +56,13 @@ class CreateChallengeForm extends React.Component{
 
   render() {
     const {users} = this.props;
+    // debugger
+  
+    if (users[0] === undefined){
+      // debugger
+      return null;
+    }
+
     return (
       <>
       <div className="create-challenge-form-container"> </div>
@@ -74,7 +84,7 @@ class CreateChallengeForm extends React.Component{
                   <option value='Walking' >Walking </option>
               </select>
             </label>
-            <label> Caloric Goal
+            <label> Calorie Goal
             <input
                   type="text"
                   value={this.state.goal}
@@ -85,11 +95,8 @@ class CreateChallengeForm extends React.Component{
               <label>
                 Who Will You Challenge?
                 <select name="users" className="user-drop" placeholder = "choose username" onChange={this.update('challengee_id')}>
-                {users.map(user =>(
-                  <UserIndexItem 
-                  user = {user} 
-                  key ={user.id}
-                  />
+                {users[0].map((user, index) =>(
+                  <option key = {index} value = {user._id} >{user.username}</option>
                   ))}
                 </select>
               </label>

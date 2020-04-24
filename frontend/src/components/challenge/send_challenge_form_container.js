@@ -4,9 +4,11 @@ import {requestUsers} from '../../actions/users_actions';
 import CreateChallengeForm from './create_challenge_form';
 
 const msp = state =>{
+  // debugger
   return{
     currentUser: state.session.user,
     errors: state.errors.session,
+    users: Object.values(state.users)
   };
 };
 

@@ -11,7 +11,7 @@ import SendChallFormContainer from "./challenge/send_challenge_form_container";
 const App = () => (
   <div className="entire-page">
     <NavBarContainer />
-    <Route exact path = "/createchallenge" component = {SendChallFormContainer}></Route>
+    <Route exact path = "/new_challenge" component = {SendChallFormContainer}></Route>
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />

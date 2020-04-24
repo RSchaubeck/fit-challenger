@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-const UserIndexItem = (props) =>{
-  return (<option value= {props.user.id} > {props.user.username} </option>);
+const UserIndexItem = ({user}) =>{
   
+  return (<option value= {user.id} > {user.username} </option>);
 };
 
 export default UserIndexItem;
