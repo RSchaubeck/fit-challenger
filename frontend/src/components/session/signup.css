@@ -1,19 +1,26 @@
 .signup-form-container {
   text-align: center;
   display: flex;
-  font-family: 'Open Sans', sans-serif;    
+  font-family: 'Open Sans', sans-serif;   
+  height: 100%; 
 }
 
 .picture {
   width: 50%;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .picture > img {
-  margin-top: 50px;
+  /* width: 100%; */
+  height: 100%;
 }
 
-.signup-form-container > form {
-  width: 50%;
+.signup-form > form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .signup-form {
@@ -21,30 +28,89 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 540px;
 }
 
 .signup-form input {
   width: 100%;
-  line-height: 39px;
+  line-height: 45px;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
+  margin: 10px 0;
+  font-size: 15px;
+  border: 1px solid lightgray;
+  transition-duration: 0.3s;
 }
 
 .signup-form input:focus {
   border: 1px solid black;
+  transition-duration: 0.3s;
+}
+
+.signup-form input:focus::placeholder {
+  color: lightgray;
+  transition-duration: 0.3s;
+  font-size: 13px;
 }
 
 .signup-form > h2 {
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 14px;
   align-self: flex-start;
+  margin: 20px 0 10px 0;
 }
 .signup-form > h1 {
+  font-size: 30px;
   align-self: flex-start;
   text-align: left;
+  font-weight: bold;
 }
 
-.signup-form input[type="submit"] {
-  line-height: 40px;
+.signup-form-outer-layer {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
 }
 
+.signup-button {
+  align-self: flex-start;
+  width: 300px;
+  height: 45px;
+  background-color: #0167D6;
+  /* margin-top: 10px; */
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #007ED6;
+  transition-duration: 0.3s;
+}
+
+.signup-or-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.login-option {
+  font-size: 14px;
+}
+
+.login-option-link {
+  text-decoration: none;
+  color: #0167D6;
+}
+
+.login-option-link:hover {
+  color:  #007ED6;
+}

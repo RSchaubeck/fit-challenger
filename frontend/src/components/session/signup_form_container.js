@@ -11,7 +11,7 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    signup: user => dispatch(signup(user))
+    signup: user => dispatch(signup(user)),
   };
 };
 
