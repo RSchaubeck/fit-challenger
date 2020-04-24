@@ -10,7 +10,8 @@
     align-items: center; 
     font-family: 'Open Sans', sans-serif;    
     font-size: 44px;
-    font-weight: 900;
+    /* font-weight: 1900; */
+    font-weight: bolder;
     color: #232529;
     text-shadow: 2px 2px 4px rgba(173, 170, 170, 0.541);
 }
