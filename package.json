@@ -30,6 +30,5 @@
   "devDependencies": {
     "nodemon": "^2.0.3",
     "webpack-dev-server": "^3.10.3"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
