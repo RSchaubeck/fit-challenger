@@ -11,6 +11,6 @@ const receiveAllUsers =(users)=>{
 
 export const requestUsers=()=>dispatch =>{
   return(
-    API.fetchUsers().then(users =>{ dispatch(receiveAllUsers(users))})
+    API.fetchUsers().then(users =>(dispatch(receiveAllUsers(users))))
   );
 };
