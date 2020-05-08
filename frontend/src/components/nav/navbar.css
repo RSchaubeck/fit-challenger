@@ -39,9 +39,23 @@
   border-bottom: 2px solid white;
 }
 
+.navbar-links > span:last-child:hover {
+  border-bottom: 2px solid transparent;
+}
+
 .errors {
   margin-top: 20px;  
   font-family: 'Open Sans', sans-serif;   
   color: white;
   font-weight: 700;
 }
+
+.logout-button {
+  font-size: 12px;
+  width: 60px;
+  height: 25px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+

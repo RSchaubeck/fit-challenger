@@ -82,6 +82,7 @@ class LoginForm extends React.Component {
           <h1 className="login-prompt">LOG IN</h1>
           <div className="login-form">
             <input
+              required={true}
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
@@ -89,6 +90,7 @@ class LoginForm extends React.Component {
             />
             <br />
             <input
+              required={true}
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
