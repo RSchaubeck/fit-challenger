@@ -114,3 +114,10 @@
 .login-option-link:hover {
   color:  #007ED6;
 }
+
+
+.errors {
+  color: #999;
+  /* display: block;
+  text-align: start; */
+}
