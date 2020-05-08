@@ -10,6 +10,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 
 import { logout } from './actions/session_actions';
+import {requestUsers} from './actions/users_actions';
 
 // import * as APIUtil from './util/challenge_api_util';
 
@@ -42,14 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // //testing
-  // window.getState = store.getState;
+  window.getState = store.getState;
   // window.createChallenge = APIUtil.createChallenge;
   // window.authoredChallenges = APIUtil.authoredChallenges;
   // window.invitedChallenges = APIUtil.invitedChallenges;
   // window.challenges = APIUtil.challenges;
   // window.acceptChallenge = APIUtil.acceptChallenge;
   // window.allChallenges = APIUtil.allChallenges;
-
+  window.requestUsers = requestUsers;
+  window.dispatch = store.dispatch;
   // ///
 
 
