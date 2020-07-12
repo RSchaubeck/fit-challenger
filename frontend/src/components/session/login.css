@@ -111,3 +111,7 @@ input:focus {
 .signup-link:hover {
   color:  #007ED6;
 }
+
+.error {
+  color: #FF3449;
+}
