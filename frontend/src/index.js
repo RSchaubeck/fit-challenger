@@ -11,6 +11,8 @@ import { setAuthToken } from './util/session_api_util';
 
 import { logout } from './actions/session_actions';
 
+// import * as APIUtil from './util/challenge_api_util';
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
 
@@ -37,6 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore({});
   }
+
+
+  // //testing
+  // window.getState = store.getState;
+  // window.createChallenge = APIUtil.createChallenge;
+  // window.authoredChallenges = APIUtil.authoredChallenges;
+  // window.invitedChallenges = APIUtil.invitedChallenges;
+  // window.challenges = APIUtil.challenges;
+  // window.acceptChallenge = APIUtil.acceptChallenge;
+  // window.allChallenges = APIUtil.allChallenges;
+
+  // ///
+
 
   const root = document.getElementById('root');
   

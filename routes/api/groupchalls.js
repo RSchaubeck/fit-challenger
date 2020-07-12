@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require("passport");
 const validateGroupChallInput = require('../../validation/groupchall');
-const Groupchall = require("../../models/Groupchall");
+const Groupchall = require("../../models/GroupChall");
 const User = require("../../models/User");
 
 router.get("/:groupchall_id", passport.authenticate("jwt", { session: false }), (req, res) => {
