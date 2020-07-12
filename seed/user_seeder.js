@@ -45,6 +45,13 @@ var users = [
         password: "password",
         height: 76,
         weight: 225
+    }),
+    new User({
+        username: "demouser",
+        email: "demo@gmail.com",
+        password: "password",
+        height:60,
+        weight: 180
     })
 ];
 
