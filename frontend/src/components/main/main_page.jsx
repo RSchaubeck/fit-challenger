@@ -23,12 +23,8 @@ class MainPage extends React.Component {
             </div>
             <div>
               <div className="main-page-links">
-                <span>
-                  <Link to={"/signup"} className="nav-link">SIGNUP</Link>
-                </span>
-                <span>
-                  <Link to={"/login"} className="nav-link">LOGIN</Link>
-                </span>
+                <Link to={"/signup"} className="nav-link">SIGNUP</Link>
+                <Link to={"/login"} className="nav-link">LOGIN</Link>
               </div>
             </div>
           </div>
