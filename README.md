@@ -1,4 +1,4 @@
-![fitChallenger Logo](https://fit-challenger.s3.amazonaws.com/logo-box/logo_transparent.png) 
+![fitChallenger Logo](https://fit-challenger.s3.amazonaws.com/logo-box/twitter_header_photo_2.png) 
 
 Web application built with MERN stack created a platform for fitness enthusiasts to track and challenge their fitness goals.
 
