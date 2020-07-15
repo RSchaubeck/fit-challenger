@@ -44,7 +44,7 @@
     color: #232529;
 }
 
-.main-page-links > span {
+.main-page-links > a {
     border: 1px solid rgba(238, 230, 230, 0.645);
     border-radius: 3px;
     width: 200px;
@@ -58,11 +58,11 @@
 
 }
 
-.main-page-links > span:hover {
+.main-page-links > a:hover {
     background-color: rgba(223, 219, 219, 0.45);
 }
 
-.main-page-links > span:first-child {
+.main-page-links > a:first-child {
     margin-right: 20px;
 }
 

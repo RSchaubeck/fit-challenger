@@ -1,3 +1,17 @@
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+button:focus {
+  outline: transparent;
+}
+
 .login-form-container {
   text-align: center;
   height: 100vh;
@@ -10,7 +24,7 @@
 .login-form {
   margin: 0 auto;
   width: 360px;
-  height: 300px;
+  height: 250px;
 }
 
 .login-form input[type="text"], .login-form input[type="password"] {
@@ -63,6 +77,11 @@
   cursor: pointer;
 }
 
+.clickable:hover {
+  background-color: #007ED6;
+  transition-duration: 0.3s;
+}
+
 .login-prompt {
   color: white;
   font-weight: 700;
@@ -110,4 +129,69 @@ input:focus {
 
 .signup-link:hover {
   color:  #007ED6;
+}
+
+.error {
+  color: #FF3449;
+}
+
+.demo-login {
+  width: 330px;
+  background-color: #0167D6;
+  align-self: center;
+
+  border-radius: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.demo-login:hover {
+  background-color: #007ED6;
+  transition-duration: 0.3s;
+}
+
+.line {
+  margin: 0px auto;
+  /* border-bottom: 1px solid #dfe0e6; */
+  width: 330px;
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.line span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  background: transparent;
+  /* position: absolute; */
+  top: -4px;
+  left: 45%;
+  text-transform: uppercase;
+}
+
+.line span::before {
+  content: '';
+  width: 45%;
+  border-bottom: solid 1px #fff;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+}
+
+.line span::after {
+  content: '';
+  width: 45%;
+  border-bottom: solid 1px #fff;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 1;
 }
